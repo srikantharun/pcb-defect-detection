@@ -38,55 +38,6 @@ class PCBDefectVLM:
 
         return Image.open(image_path).convert("RGB")
 
-    def classify(self, image: Union[str, Image.Image], categories: List[str]) -> Dict[str, float]:
-        """
-        Perform zero-shot classification on PCB image.
-
-        Args:
-            image: Path to image or PIL Image object
-            categories: List of defect categories as text prompts
-
-        Returns:
-            Dictionary of category -> probability mappings
-        """
-        if isinstance(image, str):
-            image = self.load_image(image)
-
-        # Prepare text prompts for the model
-        text_inputs = self.processor(
-            text=categories,
-            return_tensors="pt",
-            padding=True,
-            truncation=True
-        ).to(self.device)
-
-        # Prepare image for the model
-        image_inputs = self.processor(
-            images=image,
-            return_tensors="pt"
-        ).to(self.device)
-
-        # Get embeddings
-        with torch.no_grad():
-            image_features = self.model.get_image_features(**image_inputs)
-            text_features = self.model.get_text_features(**text_inputs)
-
-            # Normalize features
-            image_features = image_features / image_features.norm(dim=1, keepdim=True)
-            text_features = text_features / text_features.norm(dim=1, keepdim=True)
-
-            # Calculate similarity scores
-            logits_per_image = (100.0 * image_features @ text_features.T).squeeze(0)
-            probs = logits_per_image.softmax(dim=0)
-
-        # Create and return results dictionary
-        results = {}
-        for category, prob in zip(categories, probs.cpu().numpy()):
-            results[category] = float(prob)
-
-        return results
-
-
     def classify(self, image: Union[str, Image.Image], categories: List[str],
                    timeout: int = 30) -> Dict[str, float]:
           """
