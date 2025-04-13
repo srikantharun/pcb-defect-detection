@@ -1,0 +1,169 @@
+{
+    "defects": [
+        {
+            "category": "Solder Bridge",
+            "prompts": [
+                "solder bridging between adjacent pins",
+                "short circuit between traces or pads",
+                "excess solder creating unwanted connections",
+                "conductive paths that should be isolated"
+            ],
+            "severity": "high",
+            "description": "Unwanted connection between two or more adjacent pads or pins, often caused by excess solder."
+        },
+        {
+            "category": "Missing Component",
+            "prompts": [
+                "missing electronic component",
+                "component placement area with no part installed",
+                "empty pad where a component should be",
+                "blank area where a component should be mounted"
+            ],
+            "severity": "high",
+            "description": "A component that should be present on the PCB is missing."
+        },
+        {
+            "category": "Component Misalignment",
+            "prompts": [
+                "misaligned component on the PCB",
+                "component shifted from its correct position",
+                "rotated or tilted component",
+                "component not properly centered on its pads"
+            ],
+            "severity": "medium",
+            "description": "A component that is not properly aligned with its pads or mounting location."
+        },
+        {
+            "category": "Cold Solder Joint",
+            "prompts": [
+                "cold solder joint",
+                "dull, grainy solder connection",
+                "incomplete solder wetting",
+                "solder joint with poor adhesion"
+            ],
+            "severity": "high",
+            "description": "A solder joint that was not heated sufficiently, resulting in poor electrical and mechanical connection."
+        },
+        {
+            "category": "Tombstoning",
+            "prompts": [
+                "component standing on one end",
+                "tombstoned chip resistor or capacitor",
+                "component lifted on one side",
+                "vertical component that should be horizontal"
+            ],
+            "severity": "high",
+            "description": "A surface-mount component that has been lifted on one end due to uneven solder reflow."
+        },
+        {
+            "category": "Lifted Pad",
+            "prompts": [
+                "pad lifted from PCB substrate",
+                "copper pad delamination",
+                "detached pad from board",
+                "damage to pad connection to the board"
+            ],
+            "severity": "high",
+            "description": "A copper pad that has detached from the PCB substrate, often due to excessive heat or mechanical stress."
+        },
+        {
+            "category": "Excess Solder",
+            "prompts": [
+                "too much solder on joint",
+                "solder ball or blob",
+                "overflowed solder joint",
+                "excessive solder volume"
+            ],
+            "severity": "medium",
+            "description": "Too much solder applied to a joint, which may cause shorts or mechanical stress."
+        },
+        {
+            "category": "Insufficient Solder",
+            "prompts": [
+                "not enough solder on joint",
+                "incomplete solder coverage",
+                "starved solder joint",
+                "visible gaps in solder connection"
+            ],
+            "severity": "high",
+            "description": "Too little solder applied to a joint, resulting in weak mechanical and electrical connection."
+        },
+        {
+            "category": "Cracked Solder Joint",
+            "prompts": [
+                "cracked solder connection",
+                "fracture in solder joint",
+                "broken solder joint",
+                "visible crack in solder"
+            ],
+            "severity": "high",
+            "description": "A solder joint with a visible crack, often due to thermal cycling or mechanical stress."
+        },
+        {
+            "category": "PCB Scratch",
+            "prompts": [
+                "scratch on PCB surface",
+                "damaged trace on board",
+                "visible gouge in PCB",
+                "scrape mark on circuit board"
+            ],
+            "severity": "medium",
+            "description": "Physical damage to the PCB surface that may affect trace integrity."
+        },
+        {
+            "category": "Burnt Component",
+            "prompts": [
+                "burnt or charred component",
+                "blackened electronic part",
+                "component with burn marks",
+                "heat-damaged electronic component"
+            ],
+            "severity": "high",
+            "description": "A component showing signs of overheating or electrical failure."
+        },
+        {
+            "category": "Reversed Component",
+            "prompts": [
+                "component installed backwards",
+                "reversed polarity component",
+                "incorrectly oriented diode or capacitor",
+                "component with incorrect pin 1 position"
+            ],
+            "severity": "high",
+            "description": "A polarized component that has been installed in the wrong orientation."
+        },
+        {
+            "category": "Foreign Material",
+            "prompts": [
+                "debris on PCB surface",
+                "contaminant on circuit board",
+                "flux residue on board",
+                "dust or particle on PCB"
+            ],
+            "severity": "medium",
+            "description": "Unwanted material on the PCB that could cause shorts or other issues."
+        },
+        {
+            "category": "Via Defect",
+            "prompts": [
+                "defective via connection",
+                "incomplete plating in via",
+                "blocked via hole",
+                "damaged through-hole connection"
+            ],
+            "severity": "high",
+            "description": "A problem with a via (vertical interconnect access) that connects different layers of the PCB."
+        },
+        {
+            "category": "Copper Exposure",
+            "prompts": [
+                "exposed copper trace",
+                "missing solder mask over trace",
+                "bare copper visible on PCB",
+                "unprotected copper area"
+            ],
+            "severity": "medium",
+            "description": "Area where copper is exposed due to missing solder mask, which could lead to shorts or oxidation."
+        }
+    ]
+}
